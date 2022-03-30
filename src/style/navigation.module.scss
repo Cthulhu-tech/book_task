@@ -1,0 +1,54 @@
+@import "color";
+
+.navigation {
+
+    width: 100%;
+    display: flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: flex-end;
+    border-bottom: 1px solid $gray-200;
+
+}
+
+.navigation__container-representation {
+
+    width: 200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.navigation__image{
+
+    width: 30px;
+    height: 30px;
+    background-color: $gray-400;
+
+    &:hover{
+
+        background-color: $gray-600;
+
+    }
+
+}
+
+.row{
+
+    -webkit-mask: url("../../public/row.svg") no-repeat center;
+
+}
+
+.column{
+
+    -webkit-mask: url("../../public/column.svg") no-repeat center;
+
+}
+
+.active{
+
+    background-color: $black;
+
+}
