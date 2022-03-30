@@ -18,3 +18,11 @@ p{
     font-family: 'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
     
 }
+
+main{
+
+    margin: 0 auto;
+    min-height: calc(100vh - 278px);
+    width: clamp(100px, 100%, calc(1200px - 200px));
+
+}

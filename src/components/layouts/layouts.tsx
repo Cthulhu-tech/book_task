@@ -9,7 +9,9 @@ export const LayoutComponent = () => {
     return  <>  
                 <HeaderComponent/>
                 <NavigationComponent/>
-                <Outlet/>
+                    <main>
+                        <Outlet/> 
+                    </main>
                 <FooterComponent/>
             </>
 
