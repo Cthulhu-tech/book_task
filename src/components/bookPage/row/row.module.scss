@@ -1,0 +1,61 @@
+@import "../../../style/color";
+
+.book__container{
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-evenly;
+    grid-template-rows: minmax(200px, 400px);
+    grid-template-columns: repeat(auto-fit, 300px);
+}
+
+.sub-book__container{
+
+    margin: 10px;
+    width: 220px;
+    height: 300px;
+    padding: 10px;
+    display: flex;
+    border-radius: 6px;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid $gray-200;
+    background-color: $gray-100;
+    justify-content: space-between;
+    box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
+
+}
+
+.book__container__title{
+
+    padding: 5px;
+    max-width: 90%;
+    font-size: 14px;
+    overflow: hidden;
+    color: $gray-600;
+    font-weight: 700;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+}
+
+.book__container__image{
+
+    height: auto;
+    margin: 10px;
+    width: 100px;
+    max-height: 200px;
+
+}
+
+.book__container__image-loader{
+
+    margin: 10px;
+    width: 100px;
+    height: 180px;
+    border-radius: 8px;
+    background-color: $gray-200;
+    border: 1px solid $gray-300;
+
+}

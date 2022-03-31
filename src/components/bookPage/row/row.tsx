@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { DataRedux } from "../../../interface/interface";
-import styles from "../../../style/row.module.scss";
+import styles from "./row.module.scss";
 import { ImageComponent } from "../image/image";
 
 export const RowsComponent = () => {
@@ -12,19 +12,17 @@ export const RowsComponent = () => {
 
     useEffect(() => {
 
-        console.log(data.DataInfo)
-
     }, [data])
 
     return  <div className={styles.book__container}>{
 
-            data.DataInfo.data.items.map(item =>
-            <Link to={"/book?=" + item.volumeInfo.title} key={item.id}>
+            data.DataInfo.data.results.map(item =>
+            <Link to={"/book?=" + item.title} key={item.id}>
                 <div className={styles["sub-book__container"]}>
                     <ImageComponent 
-                        {...{imgLink: item.volumeInfo.imageLinks?.thumbnail, imgAlt: item.volumeInfo.title}}
+                        {...{imgLink: item.formats["image/jpeg"], imgAlt: item.title}}
                     />
-                    <p className={styles["book__container__title"]}>{item.volumeInfo.title}</p>
+                    <p className={styles["book__container__title"]}>{item.title}</p>
                 </div>
             </Link>)
             }</div>

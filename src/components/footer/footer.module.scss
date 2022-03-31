@@ -1,9 +1,10 @@
-@import "color";
+@import "../../style/color";
 
 .footer {
 
     width: 100%;
     min-height: 100px;
+    background-color: $gray-100;
     border-top: 1px solid $gray-200;
-    box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+
 }

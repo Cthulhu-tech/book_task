@@ -1,4 +1,4 @@
-@import "color";
+@import "../../style/color";
 
 .navigation {
 
@@ -42,13 +42,13 @@
 
 .row{
 
-    -webkit-mask: url("../../public/row.svg") no-repeat center;
+    -webkit-mask: url("../../../public/row.svg") no-repeat center;
 
 }
 
 .column{
 
-    -webkit-mask: url("../../public/column.svg") no-repeat center;
+    -webkit-mask: url("../../../public/column.svg") no-repeat center;
 
 }
 

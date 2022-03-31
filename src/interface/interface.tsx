@@ -27,155 +27,53 @@ export interface DataInfo {
 }
 
 export interface Book {
-    kind:       string;
-    totalItems: number;
-    items:      Item[];
+    count:    number;
+    next:     string;
+    previous: string;
+    results:  Result[];
 }
 
-export interface Item {
-    kind:        Kind;
-    id:          string;
-    etag:        string;
-    selfLink:    string;
-    volumeInfo:  VolumeInfo;
-    saleInfo:    SaleInfo;
-    accessInfo:  AccessInfo;
-    searchInfo?: SearchInfo;
+export interface Result {
+    id:             number;
+    title:          string;
+    authors:        Author[];
+    translators:    Author[];
+    subjects:       string[];
+    bookshelves:    string[];
+    languages:      Language[];
+    copyright:      boolean;
+    media_type:     MediaType;
+    formats:        Formats;
+    download_count: number;
 }
 
-export interface AccessInfo {
-    country:                Country;
-    viewability:            Viewability;
-    embeddable:             boolean;
-    publicDomain:           boolean;
-    textToSpeechPermission: TextToSpeechPermission;
-    epub:                   Epub;
-    pdf:                    Epub;
-    webReaderLink:          string;
-    accessViewStatus:       AccessViewStatus;
-    quoteSharingAllowed:    boolean;
+export interface Author {
+    name:       string;
+    birth_year: number | null;
+    death_year: number | null;
 }
 
-export enum AccessViewStatus {
-    None = "NONE",
-    Sample = "SAMPLE",
-}
-
-export enum Country {
-    Ru = "RU",
-}
-
-export interface Epub {
-    isAvailable:   boolean;
-    acsTokenLink?: string;
-}
-
-export enum TextToSpeechPermission {
-    Allowed = "ALLOWED",
-}
-
-export enum Viewability {
-    NoPages = "NO_PAGES",
-    Partial = "PARTIAL",
-}
-
-export enum Kind {
-    BooksVolume = "books#volume",
-}
-
-export interface SaleInfo {
-    country:      Country;
-    saleability:  Saleability;
-    isEbook:      boolean;
-    listPrice?:   SaleInfoListPrice;
-    retailPrice?: SaleInfoListPrice;
-    buyLink?:     string;
-    offers?:      Offer[];
-}
-
-export interface SaleInfoListPrice {
-    amount:       number;
-    currencyCode: string;
-}
-
-export interface Offer {
-    finskyOfferType: number;
-    listPrice:       OfferListPrice;
-    retailPrice:     OfferListPrice;
-}
-
-export interface OfferListPrice {
-    amountInMicros: number;
-    currencyCode:   string;
-}
-
-export enum Saleability {
-    ForSale = "FOR_SALE",
-    NotForSale = "NOT_FOR_SALE",
-}
-
-export interface SearchInfo {
-    textSnippet: string;
-}
-
-export interface VolumeInfo {
-    title:                string;
-    authors?:             string[];
-    publisher?:           string;
-    description?:         string;
-    industryIdentifiers:  IndustryIdentifier[];
-    readingModes:         ReadingModes;
-    printType:            PrintType;
-    categories?:          string[];
-    maturityRating:       MaturityRating;
-    allowAnonLogging:     boolean;
-    contentVersion:       string;
-    panelizationSummary?: PanelizationSummary;
-    imageLinks?:          ImageLinks;
-    language:             Language;
-    previewLink:          string;
-    infoLink:             string;
-    canonicalVolumeLink:  string;
-    subtitle?:            string;
-    publishedDate?:       string;
-    pageCount?:           number;
-}
-
-export interface ImageLinks {
-    smallThumbnail: string;
-    thumbnail:      string;
-}
-
-export interface IndustryIdentifier {
-    type:       Type;
-    identifier: string;
-}
-
-export enum Type {
-    Isbn10 = "ISBN_10",
-    Isbn13 = "ISBN_13",
-    Other = "OTHER",
+export interface Formats {
+    "application/epub+zip":            string;
+    "application/rdf+xml":             string;
+    "text/plain"?:                     string;
+    "application/x-mobipocket-ebook":  string;
+    "text/html":                       string;
+    "application/octet-stream"?:       string;
+    "image/jpeg":                      string;
+    "application/zip"?:                string;
+    "text/plain; charset=us-ascii"?:   string;
+    "text/html; charset=utf-8"?:       string;
+    "text/plain; charset=iso-8859-1"?: string;
+    "text/plain; charset=utf-8"?:      string;
+    "text/html; charset=us-ascii"?:    string;
+    "text/html; charset=iso-8859-1"?:  string;
 }
 
 export enum Language {
-    Be = "be",
-    Ru = "ru",
+    En = "en",
 }
 
-export enum MaturityRating {
-    NotMature = "NOT_MATURE",
-}
-
-export interface PanelizationSummary {
-    containsEpubBubbles:  boolean;
-    containsImageBubbles: boolean;
-}
-
-export enum PrintType {
-    Book = "BOOK",
-}
-
-export interface ReadingModes {
-    text:  boolean;
-    image: boolean;
+export enum MediaType {
+    Text = "Text",
 }

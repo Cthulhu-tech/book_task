@@ -3,10 +3,9 @@ import { DataLoad, LoadState } from "../reducer/fetchData";
 
 export const FetchData = (data: DataFromFetch) => {
 
-    const {str, max, page} = data;
+    const {page} = data;
 
-
-    const url = `https://www.googleapis.com/books/v1/volumes?q=${str}&maxResults=${max}&startIndex=${page}`;
+    const url = `https://gutendex.com/books/?page=${page}`;
 
     return (dispatch:any) => {
         

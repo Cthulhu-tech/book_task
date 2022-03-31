@@ -1,5 +1,5 @@
 import { CheckAction } from "../../store/reducer/rowOrColimn";
-import styles from "../../style/navigation.module.scss";
+import styles from "./navigation.module.scss";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
