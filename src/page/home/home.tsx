@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { DataRedux } from "../../interface/interface";
 import { useCallback, useEffect, useState } from "react";
 import { LoadComponent } from "../../components/load/load";
-import { RowsComponent } from "../../components/row/row";
-import { ColumnComponent } from "../../components/column/column";
+import { RowsComponent } from "../../components/bookPage/row/row";
+import { ColumnComponent } from "../../components/bookPage/column/column";
 
 export const HomePage = () => {
 
