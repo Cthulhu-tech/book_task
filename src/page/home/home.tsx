@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { DataRedux } from "../../interface/interface";
 import { useCallback, useEffect, useState } from "react";
 import { LoadComponent } from "../../components/load/load";
+import { RowsComponent } from "../../components/row/row";
+import { ColumnComponent } from "../../components/column/column";
 
 export const HomePage = () => {
 
@@ -10,27 +12,7 @@ export const HomePage = () => {
     const [load, setLoading] = useState(true);
     const data  = useSelector((state:DataRedux) => state);
 
-    const Row = useCallback(() => {
-        return  <div>{
-
-                data.DataInfo.data.items.map(item =>
-                    
-                <div>
-                    {item.volumeInfo.title}
-                </div>)
-
-                }</div>
-
-    },[data.DataInfo])
-
-    const Column = useCallback(() => {
-
-        return <>column</>
-
-    },[data.DataInfo])
-
-
-    const Data = () => data.RowOrColumn.row ? <Row/> : <Column/>
+    const Data = () => data.RowOrColumn.row ? <RowsComponent/> : <ColumnComponent/>
 
     const DataFetch = () => {
 
@@ -44,7 +26,6 @@ export const HomePage = () => {
         if(load)
             DataFetch();
 
-        console.log(data.DataInfo.data.items[0].volumeInfo.title)
     }, [load, data])
 
     return  <section>
