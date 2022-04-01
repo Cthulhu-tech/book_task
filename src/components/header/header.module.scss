@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDMincho&family=Source+Sans+Pro:wght@300&display=swap');
 @import "../../style/color";
 
 .header {
@@ -9,17 +10,10 @@
     border-bottom: 1px solid $gray-300;
 }
 
-.header__image{
+.header__paragraph{
 
-    width: 110px;
+    font-size: 20px;
+    padding-left: 10px;
+    font-family: 'BIZ UDMincho', serif;
 
-}
-
-.header__image-container {
-
-    width: 200px;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }

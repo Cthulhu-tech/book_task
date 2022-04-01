@@ -34,15 +34,30 @@ export const PagenationComponent = () => {
 
     const PagesButton = () => {
         
+        const lastPage = Math.ceil(data.DataInfo.data.count / 32);
+
         return <div className={styles.pagenation__container}>
-        {Pagenation(page, Math.ceil(data.DataInfo.data.count / 32)).map((data: string | number, i:number) => {
+        
+            {page > 1 && <div 
+                            className={styles["pagenation__container-button"]}
+                            onClick={() => ButtonClickDataLoader(page - 1)}
+                        >{"<"}
+            </div>}
+        {Pagenation(page, lastPage).map((data: string | number, i:number) => {
             return <div 
                         key={i}
                         className={styles["pagenation__container-button"] + ' ' + (Number(data) === page ? styles.active : '')}
                         onClick={() => !isNaN(Number(data)) && ButtonClickDataLoader(data)}
                     >{data}</div>
-        })}</div>
-
+        })}
+        {page < lastPage &&  <div 
+                            className={styles["pagenation__container-button"]}
+                            onClick={() => ButtonClickDataLoader(page + 1)}
+                        >{">"}
+        </div>}
+        
+        </div>
+        
 
     }
 
