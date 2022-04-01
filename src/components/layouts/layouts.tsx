@@ -1,14 +1,16 @@
 import { NavigationComponent } from "../navigation/navigation";
 import { FooterComponent } from "../footer/footer";
 import { HeaderComponent } from "../header/header";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 
 export const LayoutComponent = () => {
 
+    const url = useLocation();
+
     return  <>  
                 <HeaderComponent/>
-                <NavigationComponent/>
+                {url.pathname === "/" && <NavigationComponent/>}
                     <main>
                         <Outlet/> 
                     </main>

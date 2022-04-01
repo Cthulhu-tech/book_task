@@ -10,7 +10,7 @@ export const App = () => {
             <Routes>
               <Route path="/" element={<LayoutComponent />}>
                 <Route index element={<HomePage/>} />
-                <Route path="book" element={<BookPage/>} />
+                    <Route path="book/:name" element={<BookPage/>}/>
               </Route>
             </Routes>
           </BrowserRouter>

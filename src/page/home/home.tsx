@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { DataRedux } from "../../interface/interface";
 import { useEffect, useState } from "react";
 import { LoadComponent } from "../../components/load/load";
-import { RowsComponent } from "../../components/bookPage/row/row";
-import { ColumnComponent } from "../../components/bookPage/column/column";
+import { RowsComponent } from "../../components/HomePage/row/row";
+import { ColumnComponent } from "../../components/HomePage/column/column";
 import { PagenationComponent } from "../../components/pagenation/pagenation";
 import { useSearchParams } from "react-router-dom";
 
@@ -33,6 +33,7 @@ export const HomePage = () => {
     }
 
     useEffect(() => {
+
         if(load)
             DataFetch();
 

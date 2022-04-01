@@ -1,13 +1,15 @@
 import { CheckAction } from "../../store/reducer/rowOrColimn";
 import styles from "./navigation.module.scss";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { DataRedux } from "../../interface/interface";
 
 export const NavigationComponent = () => {
 
+    const data  = useSelector((state:DataRedux) => state.RowOrColumn.row);
     const dispatch = useDispatch();
-    const [row, setRow] = useState('');
-    const [column, setColumn] = useState(styles.active);
+    const [row, setRow] = useState(data ? styles.active : "");
+    const [column, setColumn] = useState(!data ? styles.active : "");
 
     const RowsState = () => {
 

@@ -17,7 +17,7 @@ export const RowsComponent = () => {
     return  <div className={styles.book__container}>{
 
             data.DataInfo.data.results.map(item =>
-            <Link to={"/book?=" + item.title} key={item.id}>
+            <Link to={"/book/" + item.title} key={item.id}>
                 <div className={styles["sub-book__container"]}>
                     <ImageComponent 
                         {...{imgLink: item.formats["image/jpeg"], imgAlt: item.title}}

@@ -2,7 +2,7 @@ import { PayloadAction } from "@reduxjs/toolkit";
 
 const dafaultValue = {
 
-    data: [],
+    data: {},
     load: true
 
 }
