@@ -52,6 +52,12 @@
 
 }
 
+.backup{
+
+    -webkit-mask: url("../../../public/backup.svg") no-repeat center;
+
+}
+
 .active{
 
     background-color: $black;

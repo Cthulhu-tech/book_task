@@ -27,6 +27,12 @@ const NavigationComponentMemo = () => {
 
     }
 
+    const Upload = () => {
+
+        console.log('Uploading')
+
+    }
+
     useEffect(() => {
 
     }, [row, column]);
@@ -34,11 +40,15 @@ const NavigationComponentMemo = () => {
     return  <nav className={styles.navigation}>
                 <div className={styles["navigation__container-representation"]}>
                     <div 
-                        className={styles["navigation__image"] + ' ' + styles.row + ' ' + row } 
+                        className={styles["navigation__image"] + " " + styles.backup} 
+                        onClick={Upload} 
+                    />
+                    <div 
+                        className={styles["navigation__image"] + " " + styles.row + " " + row } 
                         onClick={RowsState} 
                     />
                     <div 
-                        className={styles["navigation__image"]  + ' ' + styles.column + ' ' + column } 
+                        className={styles["navigation__image"]  + " " + styles.column + " " + column } 
                         onClick={ColumnState} 
                     />
                 </div>
