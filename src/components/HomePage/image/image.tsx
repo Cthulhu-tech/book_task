@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import styles from "../row/row.module.scss";
 
-export const ImageComponent = (data: {imgLink:string | undefined, imgAlt:string}) => {
+const ImageComponentMemo = (data: {imgLink:string | undefined, imgAlt:string}) => {
 
     const [load, setLoad] = useState(false);
 
@@ -19,7 +19,6 @@ export const ImageComponent = (data: {imgLink:string | undefined, imgAlt:string}
                     onLoad={() => setLoad(true)}
                 />
             </>
-    
-    
-
 }
+
+export const ImageComponent = memo(ImageComponentMemo);

@@ -1,11 +1,11 @@
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { DataRedux } from "../../../interface/interface";
 import styles from "./row.module.scss";
 import { ImageComponent } from "../image/image";
 
-export const RowsComponent = () => {
+const RowsComponentMemo = () => {
 
     const data  = useSelector((state:DataRedux) => state);
 
@@ -31,3 +31,5 @@ export const RowsComponent = () => {
             }</div>
 
 }
+
+export const RowsComponent = memo(RowsComponentMemo);

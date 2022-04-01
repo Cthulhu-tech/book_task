@@ -1,10 +1,10 @@
 import { CheckAction } from "../../store/reducer/rowOrColimn";
 import styles from "./navigation.module.scss";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { DataRedux } from "../../interface/interface";
 
-export const NavigationComponent = () => {
+const NavigationComponentMemo = () => {
 
     const data  = useSelector((state:DataRedux) => state.RowOrColumn.row);
     const dispatch = useDispatch();
@@ -43,5 +43,6 @@ export const NavigationComponent = () => {
                     />
                 </div>
             </nav>
-
 }
+
+export const NavigationComponent = memo(NavigationComponentMemo);

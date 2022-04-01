@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import {  useParams } from "react-router-dom";
 import { ImageComponent } from "../../components/HomePage/image/image";
@@ -6,7 +6,7 @@ import { LoadComponent } from "../../components/load/load";
 import { Book, DataRedux } from "../../interface/interface";
 import styles from "./book.module.scss";
 
-export const BookPage = () => {
+const BookPageMemo = () => {
 
     const params = useParams();
     const [load, setLoad] = useState(true);
@@ -43,17 +43,15 @@ export const BookPage = () => {
     }
 
     useEffect(() => {
-        console.log(dataBook)
+        
         if(!dataBook)
             search();
 
     },[dataBook, params])
 
     const Data = () => {
-        
         const bookInfo = dataBook?.results[0];
-
-        if(bookInfo){
+        if(bookInfo)
             return <>
                     <p className={styles.container__paragraph}>
                         {bookInfo?.title}
@@ -85,11 +83,9 @@ export const BookPage = () => {
                             Temporibus voluptatibus tenetur eum soluta blanditiis dolor expedita sapiente ullam quo nostrum repellat cum, voluptatum, quos est assumenda eveniet. Ipsa ratione placeat totam consequatur unde amet nesciunt! Enim, corrupti porro.
                         </p>
                     </div>
-                    
                 </>
-        }else{
-            return <p className={styles.container__paragraph}>ERROR ;(</p>
-        }
+        
+        return <p className={styles.container__paragraph}>ERROR ;(</p>
     }
 
     return  <section className={styles.container}>
@@ -97,3 +93,5 @@ export const BookPage = () => {
             </section>
 
 }
+
+export const BookPage = memo(BookPageMemo);

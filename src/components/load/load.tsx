@@ -9,5 +9,4 @@ export const LoadComponent = () => {
                 <div className={styles.animation__line} />
                 <div className={styles.animation__line} />
             </div>
-
 }

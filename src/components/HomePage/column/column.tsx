@@ -1,11 +1,11 @@
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { DataRedux } from "../../../interface/interface";
 import { ImageComponent } from "../image/image";
 import styles from "./column.module.scss";
 
 
-export const ColumnComponent = () => {
+const ColumnComponentMemo = () => {
 
     const data  = useSelector((state:DataRedux) => state);
 
@@ -43,3 +43,5 @@ export const ColumnComponent = () => {
             }</div>
 
 }
+
+export const ColumnComponent = memo(ColumnComponentMemo);
