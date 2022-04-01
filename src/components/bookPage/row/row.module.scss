@@ -40,6 +40,16 @@
 
 }
 
+.book__container__author{
+
+    padding: 5px;
+    max-width: 90%;
+    font-size: 14px;
+    color: $gray-900;
+    font-weight: 700;
+    text-align: center;
+}
+
 .book__container__image{
 
     height: auto;

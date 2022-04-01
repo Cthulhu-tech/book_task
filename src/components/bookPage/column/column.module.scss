@@ -1,0 +1,79 @@
+@import "../../../style/color";
+
+.book__container{
+
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+
+}
+
+.sub-book__container{
+
+    display: flex;
+    min-height: 190px;
+    justify-content: center;
+
+}
+
+.book__container__title{
+
+    margin: 10px;
+    font-size: 14px;
+    max-width: 150px;
+    overflow: hidden;
+    color: $gray-600;
+    font-weight: 700;
+    text-align: center;
+    text-overflow: ellipsis;
+
+}
+
+.book__container__author{
+
+    margin: 10px;
+    font-size: 14px;
+    max-width: 150px;
+    overflow: hidden;
+    color: $gray-600;
+    font-weight: 700;
+    text-align: center;
+    text-overflow: ellipsis;
+    
+}
+
+.book__container__description {
+
+    width: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid $gray-300;
+
+}
+
+.book__container__description-title{
+
+    font-size: 20px;
+    color: $gray-900;
+
+}
+
+@media (max-width: 850px) {
+
+    .book__container__description {
+
+        width: 100%;
+    
+    }
+    .sub-book__container{
+
+        margin: 10px auto;
+        align-items: center;
+        flex-direction: column;
+        width: clamp(100px, 100%, 400px);
+        box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
+
+    }
+
+}

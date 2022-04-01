@@ -10,9 +10,11 @@
     border-bottom: 1px solid $gray-300;
 }
 
-.header__paragraph{
+.header__link{
 
+    color: $black;
     font-size: 20px;
+    font-weight: bold;
     padding-left: 10px;
     font-family: 'BIZ UDMincho', serif;
 

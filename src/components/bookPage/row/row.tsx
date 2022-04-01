@@ -22,6 +22,9 @@ export const RowsComponent = () => {
                     <ImageComponent 
                         {...{imgLink: item.formats["image/jpeg"], imgAlt: item.title}}
                     />
+                    {item.authors.map((author) => {
+                        return  <p key={author?.birth_year} className={styles["book__container__author"]}>{author?.name}</p>
+                    })}
                     <p className={styles["book__container__title"]}>{item.title}</p>
                 </div>
             </Link>)
