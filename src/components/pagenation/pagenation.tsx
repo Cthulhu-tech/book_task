@@ -35,7 +35,7 @@ export const PagenationComponent = () => {
     const PagesButton = () => {
         
         const lastPage = Math.ceil(data.DataInfo.data.count / 32);
-
+        console.log(page,lastPage)
         return <div className={styles.pagenation__container}>
         
             {page > 1 && <div 
