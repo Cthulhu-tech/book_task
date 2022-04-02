@@ -3,6 +3,7 @@ import styles from "./navigation.module.scss";
 import { memo, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { DataRedux } from "../../interface/interface";
+import { useNavigate } from "react-router-dom";
 
 const NavigationComponentMemo = () => {
 
@@ -10,6 +11,7 @@ const NavigationComponentMemo = () => {
     const dispatch = useDispatch();
     const [row, setRow] = useState(data ? styles.active : "");
     const [column, setColumn] = useState(!data ? styles.active : "");
+    const navigate = useNavigate();
 
     const RowsState = () => {
 
@@ -29,7 +31,7 @@ const NavigationComponentMemo = () => {
 
     const Upload = () => {
 
-        console.log('Uploading')
+        navigate("/upload");
 
     }
 
