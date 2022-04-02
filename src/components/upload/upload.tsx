@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./upload.module.scss";
 
-export const Upload = () => {
+export const UploadComponent = () => {
     const [filesData, setFilesData] = useState<File[]>();
     const [fileLoad, setLoadFileState] = useState(false);
     const [imageState, setImageState] = useState(false);
@@ -71,8 +71,7 @@ export const Upload = () => {
         if(filesData && filesData.length > 0 && infoBook.author !== '' && infoBook.description !== '' && infoBook.genre !== '' && infoBook.title !== '' && filesData)
             setLoadFileState(true);
     },[infoBook, refLabel, image, imageState, filesData])
-    return  <section className={styles.upload}>
-                <div className={styles.form}>
+    return  <div className={styles.form}>
                 <div className={styles["form-input-container"]}>
                     <input type="text" placeholder="AUTHOR" name="author" onChange={handlerInput} className={styles["form__input-text"]}/>
                     <input type="text" placeholder="TITLE" name="title" onChange={handlerInput} className={styles["form__input-text"]}/>
@@ -87,5 +86,4 @@ export const Upload = () => {
                         <input type="file" onChange={changeHandler} id="file" multiple={true} className={styles["form__input-invisible"]} accept="image/*"/>
                     {fileLoad && <input type="submit" onClick={uploadFile} className={styles["form-button"]} value="Upload"/>}
                 </div>
-            </section>
 }
